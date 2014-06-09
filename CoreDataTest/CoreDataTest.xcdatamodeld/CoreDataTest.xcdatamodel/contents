@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6172.12" systemVersion="14A238x" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="CSDepartment" syncable="YES">
-        <attribute name="internalOrder" attributeType="Integer 32" syncable="YES"/>
-        <attribute name="phone" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="CSDepartment" representedClassName="CSDepartment" syncable="YES">
+        <attribute name="internalID" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="employees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CSEmployee" inverseName="department" inverseEntity="CSEmployee" syncable="YES"/>
     </entity>
-    <entity name="CSEmployee" syncable="YES">
+    <entity name="CSEmployee" representedClassName="CSEmployee" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="150" syncable="YES"/>
         <attribute name="firstName" attributeType="String" syncable="YES"/>
         <attribute name="gender" attributeType="Integer 16" minValueString="0" maxValueString="1" defaultValueString="0" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
-        <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CSDepartment" inverseName="employees" inverseEntity="CSDepartment" syncable="YES"/>
+        <relationship name="department" maxCount="1" deletionRule="Nullify" destinationEntity="CSDepartment" inverseName="employees" inverseEntity="CSDepartment" syncable="YES"/>
     </entity>
     <elements>
         <element name="CSDepartment" positionX="-243" positionY="-72" width="128" height="103"/>

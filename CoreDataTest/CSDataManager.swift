@@ -117,4 +117,14 @@ class CSDataManager:NSObject {
         dispatch_once(&wrapper.token, {wrapper.shared_instance = CSDataManager()})
         return wrapper.shared_instance!
     }
+    
+    func departments()->NSArray{
+        let request = NSFetchRequest(entityName: "CSDepartment")
+        return self.managedContext.executeFetchRequest(request, error: nil)
+    }
+    
+    func employees() -> NSArray{
+        let request = NSFetchRequest(entityName: "CSEmployee")
+        return self.managedContext.executeFetchRequest(request, error: nil)
+    }
 }
